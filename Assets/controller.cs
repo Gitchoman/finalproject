@@ -5,8 +5,8 @@ using UnityEngine;
 public class controller : MonoBehaviour
 {
     private Animator animator; 
-    private Vector2 velocity;           //移動方向
-    private float movespeed = 0.1f;     //移動速度
+    public Vector2 velocity;                   //移動方向
+    public float movespeed = 0.1f;     //移動速度
     private Vector2 move;               //方向&速度
     
     void Start()
@@ -14,6 +14,27 @@ public class controller : MonoBehaviour
         Application.targetFrameRate = 60; //FPSを60に設定 
         //Debug.Log("Hello World!");
         animator = GetComponent<Animator>();
+        velocity = Vector2.zero;
+    }
+
+    public void OnDownL(){
+        velocity.x -= 1;
+        animator.SetBool("right",false);
+        animator.SetBool("left",true);
+    }
+
+    public void OnUpL(){
+        velocity.x = 0;
+    }
+
+    public void OnDownR(){
+        velocity.x += 1;
+        animator.SetBool("right",true);
+        animator.SetBool("left",false);
+    }
+
+    public void OnUpR(){
+        velocity.x = 0;
     }
 
     // Update is called once per frame
@@ -22,36 +43,15 @@ public class controller : MonoBehaviour
         Vector2 position = transform.position;
 
         //WASD入力より進行方向を決定
-        velocity = Vector2.zero;
+        
 
         if(Input.GetKey(KeyCode.LeftShift))
         {
-            movespeed = 0.1f;
+            movespeed = 0.40f;
         }
         else
         {
-            movespeed = 0.05f;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            velocity.x -= 1;
-            animator.SetBool("right",false);
-            animator.SetBool("left",true);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            velocity.x += 1;
-            animator.SetBool("right",true);
-            animator.SetBool("left",false);
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            //velocity.y += 1;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            //velocity.y -= 1;
+            movespeed = 0.20f;
         }
 
         //移動先を決定
@@ -79,4 +79,6 @@ public class controller : MonoBehaviour
             animator.SetBool("running",false);
         }
     }
+
+    
 }

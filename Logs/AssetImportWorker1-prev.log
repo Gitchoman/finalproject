@@ -15,7 +15,7 @@ C:/Users/yokota/Capy
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-65351
+53669
 Successfully changed project path to: C:/Users/yokota/Capy
 C:/Users/yokota/Capy
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/yokota/Capy
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 80.53 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 87.82 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.2f1 (d6360bedb9a0)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity 2021.3.2f1/Editor/Data/Resources/UnitySubsystems
@@ -63,76 +63,76 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity 2021.3.2f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity 2021.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity 2021.3.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56772
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56912
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity 2021.3.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005139 seconds.
+Registered in 0.004663 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 80.22 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 83.04 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.504 seconds
+- Completed reload, in  0.522 seconds
 Domain Reload Profiling:
-	ReloadAssembly (504ms)
-		BeginReloadAssembly (61ms)
+	ReloadAssembly (522ms)
+		BeginReloadAssembly (60ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (354ms)
-			LoadAssemblies (58ms)
+		EndReloadAssembly (373ms)
+			LoadAssemblies (57ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (74ms)
+			SetupTypeCache (81ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (21ms)
-			SetupLoadedEditorAssemblies (218ms)
+			SetupLoadedEditorAssemblies (229ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (80ms)
+				RefreshPlugins (83ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (94ms)
-				ProcessInitializeOnLoadMethodAttributes (36ms)
+				ProcessInitializeOnLoadAttributes (99ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009030 seconds.
+Registered in 0.007217 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\yokota\Capy\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\yokota\Capy\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 76.81 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 88.39 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.905 seconds
+- Completed reload, in  0.964 seconds
 Domain Reload Profiling:
-	ReloadAssembly (906ms)
-		BeginReloadAssembly (90ms)
+	ReloadAssembly (965ms)
+		BeginReloadAssembly (91ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (14ms)
-		EndReloadAssembly (720ms)
-			LoadAssemblies (74ms)
+		EndReloadAssembly (779ms)
+			LoadAssemblies (76ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (182ms)
+			SetupTypeCache (203ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (41ms)
-			SetupLoadedEditorAssemblies (390ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (413ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (77ms)
-				BeforeProcessingInitializeOnLoad (86ms)
-				ProcessInitializeOnLoadAttributes (175ms)
-				ProcessInitializeOnLoadMethodAttributes (39ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				RefreshPlugins (89ms)
+				BeforeProcessingInitializeOnLoad (94ms)
+				ProcessInitializeOnLoadAttributes (180ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
+				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (5ms)
@@ -140,12 +140,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.59 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.65 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4049 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 43 unused Assets / (225.5 KB). Loaded Objects now: 4500.
 Memory consumption went from 150.7 MB to 150.5 MB.
-Total: 2.600400 ms (FindLiveObjects: 0.238700 ms CreateObjectMapping: 0.116400 ms MarkObjects: 2.122900 ms  DeleteObjects: 0.121200 ms)
+Total: 2.544500 ms (FindLiveObjects: 0.250400 ms CreateObjectMapping: 0.112700 ms MarkObjects: 2.058400 ms  DeleteObjects: 0.122000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -160,7 +160,233 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 29086.384158 seconds.
-  path: Assets/capydash
-  artifactKey: Guid(1d0bbe98c75bc874aae06e432c9fc25d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/capydash using Guid(1d0bbe98c75bc874aae06e432c9fc25d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b6be07b6bd50f1b747c95b33f19d1cb') in 0.005992 seconds 
+  Time since last request: 333691.855666 seconds.
+  path: Assets/Texture/e1walk/e1walk_0001.png
+  artifactKey: Guid(beeb6c09b388be6498ba2cf773697fff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e1walk/e1walk_0001.png using Guid(beeb6c09b388be6498ba2cf773697fff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '109b4bdf34040891d6e26287a480478b') in 0.103055 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Texture/e1walk
+  artifactKey: Guid(625ce540204e9004090f665cbe23401a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e1walk using Guid(625ce540204e9004090f665cbe23401a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d7ca3fd8ed37918e8f382923aaf0f8b') in 0.001508 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.682254 seconds.
+  path: Assets/Texture/Button_charge/Button_charge_0002.png
+  artifactKey: Guid(445d19847dbf1374abfe44831fe00a01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Button_charge/Button_charge_0002.png using Guid(445d19847dbf1374abfe44831fe00a01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65817c52097ae78622a310eb7cbaa0fa') in 0.014618 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.197961 seconds.
+  path: Assets/Texture/Button_Jump/Button_Jump_0002.png
+  artifactKey: Guid(232f17f5fb025d1448d28bc646d7eeca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Button_Jump/Button_Jump_0002.png using Guid(232f17f5fb025d1448d28bc646d7eeca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a7eb7ff86150268a21093b3c949adf3') in 0.013663 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.808999 seconds.
+  path: Assets/Texture/Button_Move_R/Button_Move_R_0002.png
+  artifactKey: Guid(09194311973860a478cc432dfca3306c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Button_Move_R/Button_Move_R_0002.png using Guid(09194311973860a478cc432dfca3306c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9971e43e2abe600b05d2096ab5d65ce9') in 0.009841 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.082815 seconds.
+  path: Assets/Texture/Heart/Heart_0002.png
+  artifactKey: Guid(6caff60c921f7734fb40e003f88563d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Heart/Heart_0002.png using Guid(6caff60c921f7734fb40e003f88563d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7853646311cf3bfd8892329793719f72') in 0.011106 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.599442 seconds.
+  path: Assets/Texture/capydashfast/capydashfast_0002.png
+  artifactKey: Guid(b388218b0752d91469d3914fdfd34364) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capydashfast/capydashfast_0002.png using Guid(b388218b0752d91469d3914fdfd34364) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '807bccf066f90344f7a24eb1bc8a19e3') in 0.017604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Texture/capydashfast/capydashfast_0003.png
+  artifactKey: Guid(b7f2223a9b59e634c8fa95e66b8ba485) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capydashfast/capydashfast_0003.png using Guid(b7f2223a9b59e634c8fa95e66b8ba485) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12493eacd6e03a19d13d4686517ed13d') in 0.013923 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.940637 seconds.
+  path: Assets/Texture/capyfall/capyfall_0002.png
+  artifactKey: Guid(03712df50cd3733478c4dbb87f3ed491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capyfall/capyfall_0002.png using Guid(03712df50cd3733478c4dbb87f3ed491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e61ba67cdbf92fea264f4189d455298') in 0.015848 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Texture/capyfall/capyfall_0003.png
+  artifactKey: Guid(fac9d2693203c844097995e382ec7b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capyfall/capyfall_0003.png using Guid(fac9d2693203c844097995e382ec7b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '205c54c596e8c2a169c90cb491b3ac46') in 0.011837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Texture/capyfall/capyfall_0004.png
+  artifactKey: Guid(4ede93474a693c440aada4992fd650aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capyfall/capyfall_0004.png using Guid(4ede93474a693c440aada4992fd650aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e5eaac26fe9ca4f1c69550ad3891873') in 0.011402 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.213693 seconds.
+  path: Assets/Texture/capystep/capystep_0002.png
+  artifactKey: Guid(f7eeddb40693fc14591a82a7c4d1b25e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capystep/capystep_0002.png using Guid(f7eeddb40693fc14591a82a7c4d1b25e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3f975d268ebcd4665e2e80e5a25f740') in 0.009499 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Texture/capystep/capystep_0004.png
+  artifactKey: Guid(4c3b2a264c7c4f7439ad4309ae5f8dfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capystep/capystep_0004.png using Guid(4c3b2a264c7c4f7439ad4309ae5f8dfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e215d6045afd9c071cf943ec03e442fe') in 0.011511 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.084570 seconds.
+  path: Assets/Texture/capydash/capydash_0003.png
+  artifactKey: Guid(abf21aac387a4694096393e185ed108a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capydash/capydash_0003.png using Guid(abf21aac387a4694096393e185ed108a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02c67a42269b5e155385023c5f9680ac') in 0.012652 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.739040 seconds.
+  path: Assets/Texture/capyattack/capyattack_0003.png
+  artifactKey: Guid(cf38d5b448fd3f249ad021df1561e7e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capyattack/capyattack_0003.png using Guid(cf38d5b448fd3f249ad021df1561e7e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05011d5f8e02609c542949fa8d83f8a8') in 0.012757 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Texture/capyattack/capyattack_0005.png
+  artifactKey: Guid(25198fffa3bf33242b0d936bf722828f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capyattack/capyattack_0005.png using Guid(25198fffa3bf33242b0d936bf722828f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91effa69aefbeba87dc0d9e24b0c5202') in 0.022390 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.200352 seconds.
+  path: Assets/Texture/e1attack/e1attack_0003.png
+  artifactKey: Guid(64badb0a9e0558a46a41e7085a3f28e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e1attack/e1attack_0003.png using Guid(64badb0a9e0558a46a41e7085a3f28e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c6fa87f0930f6583fc6c5bd0e038113') in 0.016194 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Texture/e1attack/e1attack_0006.png
+  artifactKey: Guid(360845f334aec3d4191a83ae741723eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e1attack/e1attack_0006.png using Guid(360845f334aec3d4191a83ae741723eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60b88419e99d5b9d155a369325e99da2') in 0.015107 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Texture/e1attack/e1attack_0004.png
+  artifactKey: Guid(ae52b06cdeb7cd544a0108dc6eedef43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e1attack/e1attack_0004.png using Guid(ae52b06cdeb7cd544a0108dc6eedef43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84e075576bde82da03ddf97ca4b83846') in 0.019265 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 163.856556 seconds.
+  path: Assets/Texture/capyjump/capyjump_0002.png
+  artifactKey: Guid(57f4095de7c5b9f429b5a662c4add092) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capyjump/capyjump_0002.png using Guid(57f4095de7c5b9f429b5a662c4add092) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4788445adb7d4501341859aa6a62cd9a') in 0.014900 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Texture/capyjump/capyjump_0003.png
+  artifactKey: Guid(01fd25da2e938f747b72d0af081a2b52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capyjump/capyjump_0003.png using Guid(01fd25da2e938f747b72d0af081a2b52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65ef8d8a92df1c6f7faf95e2f463ecb8') in 0.015585 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.291608 seconds.
+  path: Assets/Texture/capywalk/capywalk_0002.png
+  artifactKey: Guid(58530767bc6505d4993d4a4696590b5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capywalk/capywalk_0002.png using Guid(58530767bc6505d4993d4a4696590b5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42fe656fa7549ac4d503a76cfb60f818') in 0.017209 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Texture/capywalk/capywalk_0003.png
+  artifactKey: Guid(bc581de77d3cf414086d545fb55934ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capywalk/capywalk_0003.png using Guid(bc581de77d3cf414086d545fb55934ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9db5e9acc4ff4f5060ecf52d4009b3a') in 0.015895 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Texture/capywalk/capywalk_0006.png
+  artifactKey: Guid(c8343ab408f672d4aa18311a5bf5c213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/capywalk/capywalk_0006.png using Guid(c8343ab408f672d4aa18311a5bf5c213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44e90dd94817eb12f1b948874e4a815a') in 0.012377 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.342901 seconds.
+  path: Assets/Texture/e1damage/e1damage_0002.png
+  artifactKey: Guid(b680884007db04041a8c80278fe3e112) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e1damage/e1damage_0002.png using Guid(b680884007db04041a8c80278fe3e112) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05fb1a9842787355d21e2bc8964f48cb') in 0.012557 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Texture/e1damage/e1damage_0003.png
+  artifactKey: Guid(0e742a253720a154bb4adab5009f277f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e1damage/e1damage_0003.png using Guid(0e742a253720a154bb4adab5009f277f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfe9139b41d9ee66c4c7637407238419') in 0.010923 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.206429 seconds.
+  path: Assets/Texture/e1damage/e1damage_0005.png
+  artifactKey: Guid(274dbe6d05fd27a4e923cc147cc08f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e1damage/e1damage_0005.png using Guid(274dbe6d05fd27a4e923cc147cc08f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc2f0d8bef2a1863fb055d8559d75185') in 0.012844 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Texture/e1damage/e1damage_0008.png
+  artifactKey: Guid(7027a85a36f11864a9d85c02c374ceb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e1damage/e1damage_0008.png using Guid(7027a85a36f11864a9d85c02c374ceb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2b75e2a6f155b9fecb8a4cc2766138e') in 0.010497 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.003115 seconds.
+  path: Assets/Texture/e1find/e1find_0001.png
+  artifactKey: Guid(6c95f91f99143d248aa47c06d24f43e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e1find/e1find_0001.png using Guid(6c95f91f99143d248aa47c06d24f43e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8c340364089f5379a983a1984c27b27') in 0.011089 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Texture/e1find/e1find_0005.png
+  artifactKey: Guid(157c444e43e922c4c81e2d1b625ec29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e1find/e1find_0005.png using Guid(157c444e43e922c4c81e2d1b625ec29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac6456432ef8424507ab822f49a94122') in 0.010104 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Texture/e2find/e2find_0001.png
+  artifactKey: Guid(3f9ec578d6106bf46bdbbebcee4b8a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e2find/e2find_0001.png using Guid(3f9ec578d6106bf46bdbbebcee4b8a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94b6e221a29192e94d0e42a57c60c721') in 0.011462 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Texture/e1find/e1find_0003.png
+  artifactKey: Guid(e5ea411bb86d2874f8ef833dfefb39da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e1find/e1find_0003.png using Guid(e5ea411bb86d2874f8ef833dfefb39da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bbd7fae6c0272666e841e01eb22d584') in 0.009448 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.004331 seconds.
+  path: Assets/Texture/e2find/e2find_0003.png
+  artifactKey: Guid(a23036a19fe53b44eba2379aea47591a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e2find/e2find_0003.png using Guid(a23036a19fe53b44eba2379aea47591a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35d40405bd2d62b357b648ce9343da9c') in 0.010935 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Texture/e2find/e2find_0005.png
+  artifactKey: Guid(4b4e3904940901f409f9bda7f3bf24f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e2find/e2find_0005.png using Guid(4b4e3904940901f409f9bda7f3bf24f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ce533c5bf5305b3091053c3e5a2e62b') in 0.010996 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.265672 seconds.
+  path: Assets/Texture/e2walk/e2walk_0001.png
+  artifactKey: Guid(e53256ac5ba11d04d9989d439ec33a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e2walk/e2walk_0001.png using Guid(e53256ac5ba11d04d9989d439ec33a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47d27e66eeb554c2ad0d9fc4ea3fa344') in 0.011836 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Texture/e2walk/e2walk_0002.png
+  artifactKey: Guid(49caf52578b41d64daf591b9e7295ded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e2walk/e2walk_0002.png using Guid(49caf52578b41d64daf591b9e7295ded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '887226d6bc49f3f14f2ac486df7b441c') in 0.009786 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Texture/e2walk/e2walk_0004.png
+  artifactKey: Guid(75772817984ed404daf6d22caa41480c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e2walk/e2walk_0004.png using Guid(75772817984ed404daf6d22caa41480c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0704afca02e829a68630b609bfd8d57') in 0.010032 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Texture/e2walk/e2walk_0006.png
+  artifactKey: Guid(2c959da9437a53349a45e58e7cc48b4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/e2walk/e2walk_0006.png using Guid(2c959da9437a53349a45e58e7cc48b4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2efb566e7e3bd4f817ba70b88c2e63aa') in 0.011074 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

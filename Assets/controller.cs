@@ -11,8 +11,12 @@ public class controller : MonoBehaviour
     public float chargespeed = 20f; //突進速度
     public Vector2 move;            //方向&速度
     public int jumpcnt;             //ジャンプ回数
+    public bool movel = false;
+    public bool mover = false;
     public bool right = true;       //向き
-    public bool charge = false;     //チャージ中フラグ
+    public bool charge = false;     //突進中フラグ
+    public bool attack = false;     //攻撃フラグ
+    public bool aircharge = false;  //空中突進
     public bool inair = false;      //空中にいるかどうか
     
     void Start()
@@ -28,6 +32,7 @@ public class controller : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")){
             Debug.Log(inair);
             inair = false;
+            aircharge = false;
             animator.SetBool("inair",false);
             animator.SetBool("jump",false);
             jumpcnt = 0;
@@ -40,50 +45,49 @@ public class controller : MonoBehaviour
             Debug.Log(inair);
             animator.SetBool("inair",true);
             inair = true;
+            if(jumpcnt==0){
+                jumpcnt += 1;
+            }
         }
     }
 
-    //Button_Move_Lを押したとき
+    //Button_Move_Lを押したとき(同時押しに対応するためにフラグのみを操作)
     public void OnDownL(){
-        if(!charge){
-            velocity.x -= 1;
-            animator.SetBool("right",false);
-            animator.SetBool("left",true);
-            right = false;
-        }
+        Debug.Log("Lmove");
+        movel = true;
     }
 
     //Button_Move_Lを離したとき
     public void OnUpL(){
-        velocity.x = 0;
+        movel = false;
     }
 
     //Button_Move_Rを押したとき
     public void OnDownR(){
-        if(!charge){
-            velocity.x += 1;
-            animator.SetBool("right",true);
-            animator.SetBool("left",false);
-            right = true;
-        }
+        Debug.Log("Rmove");
+        mover = true;
     }
 
     //Button_Move_Rを離したとき
     public void OnUpR(){
-        velocity.x = 0;
+        mover = false;
     }
 
     //Button_Chargeを押したとき
     public void Charge(){
-        if(!charge){
+        if(!charge&&!aircharge&&!attack){
             capybody.velocity = new Vector2(velocity.x,0);
             charge = true;
             animator.SetBool("charge",true);
             animator.SetBool("running",false);
             animator.SetBool("jump",false);
+            if(inair){
+                aircharge = true;
+            }
         }
     }
 
+    //chargeアニメーション中に呼び出される（加速）
     public void ChargeAT(){
         if(right){
             chargespeed = 20f;
@@ -93,6 +97,7 @@ public class controller : MonoBehaviour
         }
     }
 
+    //chargeアニメーション中に呼び出される（減速）
     public void ChargeDC(){
         if(right){
             chargespeed = 10f;
@@ -123,6 +128,23 @@ public class controller : MonoBehaviour
         }
     }
 
+    //Button_Attackを押したとき
+    public void Attack(){
+        if(!attack&&!inair&&!charge){
+            attack = true;
+            animator.SetBool("attack",true);
+            animator.SetBool("running",false);
+            animator.SetBool("jump",false);
+        }
+    }
+
+    //attackアニメーション終了時
+    public void AttackCXL(){
+        Debug.Log("attackキャンセル");
+        attack = false;
+        animator.SetBool("attack",false);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -130,11 +152,30 @@ public class controller : MonoBehaviour
         
         movespeed = 0.20f;
 
+        //移動方向を定める部分
+        if(!charge&&!attack){
+            if(movel){
+                velocity.x = -1;
+                animator.SetBool("right",false);
+                animator.SetBool("left",true);
+                right = false;
+            }
+            else if(mover){
+                velocity.x = 1;
+                animator.SetBool("right",true);
+                animator.SetBool("left",false);
+                right = true;
+            }
+            else{
+                velocity.x = 0;
+            }
+        }
+
         //移動先を決定
         move = velocity.normalized * movespeed;
 
         //位置の更新
-        if(move.magnitude > 0&&!charge){
+        if(move.magnitude > 0&&!charge&&!attack){
             Debug.Log(velocity);
             position += move;
             animator.SetBool("running",true);

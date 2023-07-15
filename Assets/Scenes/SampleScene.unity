@@ -1481,8 +1481,12 @@ MonoBehaviour:
   chargespeed: 10
   move: {x: 0, y: 0}
   jumpcnt: 0
+  movel: 0
+  mover: 0
   right: 0
   charge: 0
+  attack: 0
+  aircharge: 0
   inair: 0
 --- !u!50 &732683947
 Rigidbody2D:
@@ -4482,7 +4486,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 829075995}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 732683946}
+        m_TargetAssemblyTypeName: controller, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &829075995
 MonoBehaviour:
   m_ObjectHideFlags: 0

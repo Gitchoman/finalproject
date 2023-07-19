@@ -6,18 +6,18 @@ public class controller : MonoBehaviour
 {
     private Animator animator; 
     private Rigidbody2D capybody;
-    public Vector2 velocity;        //移動方向
-    public float movespeed = 0.20f; //移動速度
-    public float chargespeed = 20f; //突進速度
-    public Vector2 move;            //方向&速度
-    public int jumpcnt;             //ジャンプ回数
-    public bool movel = false;
-    public bool mover = false;
-    public bool right = true;       //向き
-    public bool charge = false;     //突進中フラグ
-    public bool attack = false;     //攻撃フラグ
-    public bool aircharge = false;  //空中突進
-    public bool inair = false;      //空中にいるかどうか
+    private Vector2 velocity;        //移動方向
+    private float movespeed = 0.20f; //移動速度
+    private float chargespeed = 20f; //突進速度
+    private Vector2 move;            //方向&速度
+    private int jumpcnt;             //ジャンプ回数
+    private bool movel = false;
+    private bool mover = false;
+    private bool right = true;       //向き
+    private bool charge = false;     //突進中フラグ
+    private bool attack = false;     //攻撃フラグ
+    private bool aircharge = false;  //空中突進
+    private bool inair = false;      //空中にいるかどうか
     
     void Start()
     {

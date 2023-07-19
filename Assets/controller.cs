@@ -6,24 +6,32 @@ public class controller : MonoBehaviour
 {
     private Animator animator; 
     private Rigidbody2D capybody;
+    private GameObject attackDTC;
+    private BoxCollider2D attackDTCCol;
     private Vector2 velocity;        //移動方向
     private float movespeed = 0.20f; //移動速度
     private float chargespeed = 20f; //突進速度
     private Vector2 move;            //方向&速度
+    public int hp = 6;               //体力
     private int jumpcnt;             //ジャンプ回数
     private bool movel = false;
     private bool mover = false;
-    private bool right = true;       //向き
+    public bool right = true;        //向き
     private bool charge = false;     //突進中フラグ
     private bool attack = false;     //攻撃フラグ
     private bool aircharge = false;  //空中突進
     private bool inair = false;      //空中にいるかどうか
+    private bool damage = false;
     
     void Start()
     {
         Application.targetFrameRate = 60; //FPSを60に設定 
         animator = GetComponent<Animator>();
         capybody = GetComponent<Rigidbody2D>();
+        attackDTC = transform.GetChild(0).gameObject;
+        attackDTC.transform.position = new Vector2(0.14f,0.05f);
+        attackDTCCol = attackDTC.GetComponent<BoxCollider2D>();
+        attackDTCCol.enabled = false;
         velocity = Vector2.zero;
     }
 
@@ -37,17 +45,38 @@ public class controller : MonoBehaviour
             animator.SetBool("jump",false);
             jumpcnt = 0;
         }
+
+        if(collision.gameObject.CompareTag("Enemy")){
+            Debug.Log("あたった");
+            damage = true;
+            animator.SetBool("damage",true);
+            if(!right){
+                this.capybody.AddForce(transform.right*300f);
+            }
+            else{
+                this.capybody.AddForce(transform.right*-300f);
+            }
+        }
     }
 
     //Colliderどうしが離れたときに呼び出される
     private void OnCollisionExit2D(Collision2D collision){
-        if (collision.gameObject.CompareTag("Ground")){
+        if(collision.gameObject.CompareTag("Ground")){
             Debug.Log(inair);
             animator.SetBool("inair",true);
             inair = true;
             if(jumpcnt==0){
                 jumpcnt += 1;
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D trigger){
+        if(trigger.gameObject.CompareTag("Enemyhead")){
+            Debug.Log("踏んだ");
+            capybody.velocity = new Vector2(velocity.x,0);
+            this.capybody.AddForce(transform.up*700f);
+            animator.SetBool("jump",true);
         }
     }
 
@@ -138,11 +167,40 @@ public class controller : MonoBehaviour
         }
     }
 
+    public void ENAAttackDTC(){
+        Vector2 position = transform.position; 
+        if(right){
+            attackDTC.transform.position = position + new Vector2(0.85f,0.3f);
+        }
+        else{
+            attackDTC.transform.position = position + new Vector2(-0.85f,0.3f);
+        }
+
+        attackDTCCol.enabled = true;
+    }
+
+    public void DISAttackDTC(){
+        attackDTCCol.enabled = false;
+    }
+
+
+
     //attackアニメーション終了時
     public void AttackCXL(){
         Debug.Log("attackキャンセル");
         attack = false;
         animator.SetBool("attack",false);
+    }
+
+    public void Damage(){
+        hp -= 1;
+        Debug.Log(hp);
+        animator.SetBool("damage",false);
+    }
+
+    public void DamageCXL(){
+        damage = false;
+        //animator.SetBool("damage",false);
     }
 
     // Update is called once per frame
@@ -175,7 +233,7 @@ public class controller : MonoBehaviour
         move = velocity.normalized * movespeed;
 
         //位置の更新
-        if(move.magnitude > 0&&!charge&&!attack){
+        if(move.magnitude > 0&&!charge&&!attack&&!damage){
             Debug.Log(velocity);
             position += move;
             animator.SetBool("running",true);
@@ -194,6 +252,11 @@ public class controller : MonoBehaviour
         }
         else{
             animator.SetBool("fall",false);
+        }
+
+        //ジャンプできなくなるバグ対策
+        if(!inair){
+            jumpcnt = 0;
         }
     }
 

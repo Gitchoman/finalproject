@@ -6,21 +6,42 @@ public class e01_controller : MonoBehaviour
 {
     private Animator animator; 
     private Rigidbody2D body;
+    private Vector2 initialPOS;
     private Vector2 velocity;        //移動方向
     private float movespeed = 0.20f; //移動速度
     private Vector2 move;            //方向&速度
     private bool right = true;       //向き
     private bool attack = false;     //攻撃フラグ
+    private bool damage = false;
+    public bool capyright;
+    private GameObject capy;
+    private controller script;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
+        initialPOS = transform.position;
         velocity = Vector2.zero;
+
+        capy = GameObject.Find("Capy");
+        script = capy.GetComponent<controller>();
     }
 
     private void OnTriggerEnter2D(Collider2D trigger){
+        capyright = script.right;
+        if(trigger.gameObject.CompareTag("AttackDetection")){
+            damage = true;
+            animator.SetBool("damage",true);
+            if(!capyright){
+                this.body.AddForce(transform.right*-300f);
+            }
+            else{
+                this.body.AddForce(transform.right*300f);
+            }
+        }
+        
         if(trigger.gameObject.CompareTag("PlatformR")){
             Debug.Log(right);
             right = false;
@@ -29,6 +50,18 @@ public class e01_controller : MonoBehaviour
             Debug.Log(right);
             right = true;
         }
+    }
+
+    private void Damage(){
+        this.gameObject.SetActive(false);
+        Invoke("Respawn",5);
+    }
+
+    private void Respawn(){
+        damage = false;
+        right = true;
+        transform.position = initialPOS;
+        this.gameObject.SetActive(true);
     }
 
 
@@ -40,7 +73,7 @@ public class e01_controller : MonoBehaviour
         movespeed = 0.02f;
 
         //移動方向を定める部分
-        if(!attack){
+        if(!attack&&!damage){
             if(!right){
                 velocity.x = -1;
                 animator.SetBool("right",false);
@@ -54,10 +87,9 @@ public class e01_controller : MonoBehaviour
         //移動先を決定
         move = velocity.normalized * movespeed;
 
-        if(move.magnitude > 0&&!attack){
+        if(move.magnitude > 0&&!attack&&!damage){
             Debug.Log(velocity);
             position += move;
-            //animator.SetBool("running",true);
             transform.position = position;
         }
     }

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    GameObject obj;
+    GameObject capy;
     controller script;
     Transform playermove;
 
     // Start is called before the first frame update
     void Start()
     {
-        obj = GameObject.Find("Capy");
-        script = obj.GetComponent<controller>();
-        playermove = obj.transform;
+        capy = GameObject.Find("Capy");
+        script = capy.GetComponent<controller>();
+        playermove = capy.transform;
     }
 
     //Updateの後に呼び出される

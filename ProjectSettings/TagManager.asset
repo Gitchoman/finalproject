@@ -10,6 +10,8 @@ TagManager:
   - PlatformL
   - Enemyhead
   - AttackDetection
+  - EnemyATDTC
+  - Platform
   layers:
   - Default
   - TransparentFX

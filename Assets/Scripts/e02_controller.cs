@@ -16,6 +16,7 @@ public class e02_controller : MonoBehaviour
     public bool capyright;
     private GameObject capy;
     private controller script;
+    private int capyhp;
 
     // Start is called before the first frame update
     void Start()
@@ -81,6 +82,11 @@ public class e02_controller : MonoBehaviour
             Debug.Log(velocity);
             position += move;
             transform.position = position;
+        }
+
+        capyhp = script.hp;
+        if(capyhp<1){
+            this.gameObject.SetActive(false);   
         }
     }
 }

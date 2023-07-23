@@ -6,6 +6,7 @@ public class controller : MonoBehaviour
 {
     private Animator animator; 
     private Rigidbody2D capybody;
+    private SpriteRenderer capyrenderer;
     public AudioClip bite;
     private int groundtag = 0;      //0:Ground,1:Platform
     public AudioClip dash01;
@@ -31,12 +32,14 @@ public class controller : MonoBehaviour
     private bool aircharge = false;  //空中突進
     private bool inair = false;      //空中にいるかどうか
     private bool damage = false;
+    public GameObject panel;
     
     void Start()
     {
         Application.targetFrameRate = 60; //FPSを60に設定 
         animator = GetComponent<Animator>();
         capybody = GetComponent<Rigidbody2D>();
+        capyrenderer = gameObject.GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
         attackDTC = transform.GetChild(0).gameObject;
         attackDTC.transform.position = new Vector2(0.14f,0.05f);
@@ -55,13 +58,8 @@ public class controller : MonoBehaviour
             aircharge = false;
             animator.SetBool("inair",false);
             animator.SetBool("jump",false);
+            animator.SetBool("jump2",false);
             jumpcnt = 0;
-            if(collision.gameObject.CompareTag("Ground")){
-                groundtag = 0;
-            }
-            else if(collision.gameObject.CompareTag("Platform")){
-                groundtag = 1;
-            }
         }
 
         if(!charge&&collision.gameObject.CompareTag("Enemy")){
@@ -77,9 +75,24 @@ public class controller : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision){
+        if(collision.gameObject.CompareTag("Platform")&&(collision.gameObject.CompareTag("Ground"))){
+            groundtag = 1;
+            inair = false;
+        }
+        else if(collision.gameObject.CompareTag("Ground")){
+            groundtag = 0;
+            inair = false;
+        }
+        else{
+            groundtag = 1;
+            inair = false;
+        }
+    }
+
     //Colliderどうしが離れたときに呼び出される
     private void OnCollisionExit2D(Collision2D collision){
-        if(collision.gameObject.CompareTag("Ground")){
+        if(collision.gameObject.CompareTag("Ground")||collision.gameObject.CompareTag("Platform")){
             //Debug.Log(inair);
             animator.SetBool("inair",true);
             inair = true;
@@ -207,12 +220,21 @@ public class controller : MonoBehaviour
             capybody.velocity = new Vector2(velocity.x,0);
             this.capybody.AddForce(transform.up*700f);
             animator.SetBool("jump",true);
+            if(jumpcnt==1){
+                animator.SetBool("jump2",true);
+            }
             jumpcnt += 1;
         }
     }
 
+    public void Jump2(){
+        animator.SetBool("jump2",false);
+    }
+
     //Button_Attackを押したとき
     public void Attack(){
+        Debug.Log(groundtag);
+        Debug.Log(inair);
         if(!attack&&!inair&&!charge){
             attack = true;
             animator.SetBool("attack",true);
@@ -251,11 +273,21 @@ public class controller : MonoBehaviour
         hp -= 1;
         //Debug.Log(hp);
         animator.SetBool("damage",false);
+        if(hp<1){
+            capyrenderer.sortingOrder = 22;
+            panel.SetActive(true);
+            animator.SetBool("death",true);
+        }
     }
 
     public void DamageCXL(){
         damage = false;
         //animator.SetBool("damage",false);
+    }
+
+    private void Death()
+    {
+        this.gameObject.SetActive(false);    
     }
 
     // Update is called once per frame

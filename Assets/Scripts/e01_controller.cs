@@ -6,6 +6,7 @@ public class e01_controller : MonoBehaviour
 {
     private Animator animator; 
     private Rigidbody2D body;
+    private BoxCollider2D col;
     public AudioClip sword;
     public AudioClip arm;
     private AudioSource audioSource;
@@ -32,6 +33,7 @@ public class e01_controller : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
+        col = GetComponent<BoxCollider2D>();
         audioSource = GetComponent<AudioSource>();
         attackDTC = transform.GetChild(0).gameObject;
         attackDTC.transform.position = transform.position;
